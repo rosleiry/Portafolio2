@@ -15,11 +15,12 @@
  * leer_archivo, obtener_test_nombres, agregar_test_nombres, eliminar_test_nombres, escribir_archivo, etc.
  * Este problema vale por 3 ejercicios. Deben de hacer mínimo 9 minunit para este punto
  */
+FILE* escribir_archivo(const char *minu);
+FILE* leer_archivo(char *cadena);
 char * agregar_mrt(char *minunit, char **palabra);
 char ** eliminar_mrt(char * p);
 char **comparar(char **a,char **b);
 char *anadir(char *p,char *texto);
-FILE* escribir_archivo(const char *minu);
-FILE* leer_archivo(char *cadena);
+
 
 #endif //PORTAFOLIO2_EJERCICIO8_H

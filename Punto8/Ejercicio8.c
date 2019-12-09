@@ -73,9 +73,7 @@ char **comparar(char **a,char **b)
 char * agregar_mrt(char *minunit, char **palabra)
 {
     int i;
-    char *ei = "MU_TEST_SUITE";
-    char *ef = "}";
-    char *ptri,*ptrf;
+    char *ei = "MU_TEST_SUITE", *ef = "}", *ptri,*ptrf;
     ptri = minunit;
     ptri = strstr(ptri,ei);
     ptri = strstr(ptri,"{");
