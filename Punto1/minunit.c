@@ -10,18 +10,15 @@
 
 MU_TEST(test1) {
     char *string="HOLA.COMO ESTAS";
-    const char signos = '.';
-    mu_assert_int_eq("COMO ESTAS", eliminar(string,signos));
+    mu_assert_int_eq("COMO ESTAS", eliminar_string(string));
 }
 MU_TEST(test2) {
     char *string="HOLA:COMO ESTAS";
-    const char signos = ':';
-    mu_assert_int_eq("COMO ESTAS", eliminar(string,signos));
+    mu_assert_int_eq("COMO ESTAS", eliminar_string(string));
 }
 MU_TEST(test3) {
     char *string="HOLA;COMO ESTAS";
-    const char signos = ';';
-    mu_assert_int_eq("COMO ESTAS", eliminar(string,signos));
+    mu_assert_int_eq("COMO ESTAS", eliminar_string(string));
 }
 
 

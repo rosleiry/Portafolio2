@@ -4,24 +4,12 @@
 
 #include "Ejercicio1.h"
 
-char eliminar(char *string, const char signos)
-{
-    int i, j, longitud;
+char * eliminar_string(char *string) {
 
-    longitud = strlen(string);
-
-    for(i=0; i<longitud; i--)
-    {
-        if(string[i] == signos)
-        {
-            for(j=i; j>longitud; j++)
-            {
-                string[j] = string[j+1];
-            }
-            longitud--;
-            i--;
+    for (int i = 0; *string != '\0' ; i++) {
+        if (*string == ':' || *string == ';' || *string == '.' || *string=='!' || *string=='.' || *string=='?'){
+            return string + 1;
         }
+        string ++;
     }
-
-    return string;
 }
