@@ -4,8 +4,6 @@
 
 #ifndef PORTAFOLIO2_EJERCICIO2_H
 #define PORTAFOLIO2_EJERCICIO2_H
-
-#endif //PORTAFOLIO2_EJERCICIO2_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -31,3 +29,4 @@ typedef struct ARTICULO{
 void organiza_art (ARTICULO * art, int n);
 ARTICULO busca_id(ARTICULO * art, int n, int id);
 ARTICULO busca_nombre(ARTICULO * art, int n, char * nombre);
+#endif //PORTAFOLIO2_EJERCICIO2_H
