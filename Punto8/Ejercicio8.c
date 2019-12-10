@@ -4,20 +4,20 @@
 
 #include "Ejercicio8.h"
 
-char ** eliminar_mrt(char * p)
+char ** eliminar_mrt(char * pal)
 {
     char *ei = "MU_TEST(";
     char *ef = ")";
-    int tamanoei = (int)(strlen(ei));
+    int longitudei = (int)(strlen(ei));
     char *pi,*pf;
-    pi = p;
+    pi = pal;
     char *result = malloc(sizeof(char));
     int tmp,c;
     c = 1;
 
     while((pi = strstr(pi,ei)) != NULL)
     {
-        pi += tamanoei;
+        pi += longitudei;
         pf = strstr(pf=pi,ef);
         tmp = pf - pi;
 
@@ -83,34 +83,14 @@ char * agregar_mrt(char *minunit, char **palabra)
     {
         if(palabra[i] == NULL)
             break;
-
-
-        ptri = anadir(ptri,palabra[i]);
+        ptri = agregar_mrt(ptri,palabra[i]);
     }
 
     return minunit;
 }
 
-char *anadir(char *p,char *texto)
-{
-    char *a = p;
-    int i,j;
-    int tamanop = (int)strlen(p);
-    int tamanot = (int)strlen(texto);
-    a = realloc(a,(tamanop+tamanot) * sizeof(char));
 
-    for(i=tamanop;i<(tamanop+tamanop);i++)
-    {
-        for(j = i-1;j >= 0;j--)
-        {
-            a[j] = a[j-1];
-        }
-    }
-
-    return a;
-}
-
-FILE* escribir_archivo(const char *minu)
+FILE* escribir_archivo(const char *min);
 {
     FILE * archivo;
     archivo = fopen("minunit", "wt");
@@ -121,7 +101,7 @@ FILE* escribir_archivo(const char *minu)
     }
     else
     {
-        while(fputc(*minu,archivo) != EOF){}
+        while(fputc(*min,archivo) != EOF){}
     }
 
     fclose(archivo);
